@@ -11,7 +11,7 @@ const port = 5000;
 require('dotenv').config()
 app.use(bodyParser.json());
 app.use(cors());
- mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@dblucasleiro.1tbb4b0.mongodb.net/DbLucasLeiro?retryWrites=true&w=majority`)
+ mongoose.connect(process.env.MONOGDB_CONNECT_URI)
 // mongoose.connect('mongodb://localhost:27017/proveedores')
   .then(() => console.log('Mongoose is connected'))
   .catch(err => console.log(`Mongoose connection error: ${err}`));
